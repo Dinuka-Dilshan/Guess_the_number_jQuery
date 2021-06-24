@@ -1,0 +1,85 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+}
+
+body{
+    margin: 0;
+    background-color: black;
+    color: #fff;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40vh;
+}
+
+input[type="number"]{
+    line-height: 2rem;
+    width:6rem;
+}
+
+.footer button{
+    line-height: 2rem;
+    width:6rem;
+}
+
+.continue{
+    display: none;
+    justify-content: center;
+   
+}
+.win{
+    display: flex;
+    justify-content: center;
+   
+}
+#btnContinue{
+    line-height: 2rem;
+}
+
+.resetBtn{
+ display: flex;
+ justify-content:flex-end;
+ font-size: 1rem;
+}
+
+.heading{
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .heading{
+        
+        font-size: 0.7rem;
+    }
+
+    .footer{
+        flex-direction: column;
+    }
+
+    h2{
+        font-size: 0.7rem;
+        margin-top: 0.5rem;
+    }
+
+    .screenNumber{
+        font-size: 1.5rem;
+    }
+  }
