@@ -5,6 +5,7 @@ let winSound = new Audio("audio/won.wav");
 let loseSound = new Audio("audio/lose.wav");
 let wrongGuessSound = new Audio("audio/wrongGuess.wav");
 let randomNumber = Math.floor(Math.random()*20)+1;
+console.log(randomNumber);
 let userinput;
 let leftTurns = 10; 
 let highScore=0;
@@ -12,7 +13,7 @@ const screenNumber = $(".screenNumber");
 const highScoreDisplay = $("#heighScoreDisplay");
 const score = $("#score");
 const correctNum = $("#correctNum");
-
+let winStatus = false;
 let checkWinStatus = (guessNum,randomNum)=>{
   
     if(guessNum === randomNum){
@@ -44,8 +45,10 @@ const gameLoop = ()=>{
                 screenNumber.text(userinput);
                 $("body").css("background-color","green");
                 correctNum.text("You Won..!");
+                winStatus = true;
                 winSound.play();
                 $(".continue").removeClass("continue").addClass("win");
+                $(".enter").addClass("getRid");
                 if(leftTurns>highScore){
                     highScore=leftTurns;
                     highScoreDisplay.text("Heighest Score: "+highScore);
@@ -81,6 +84,8 @@ const resetGame = ()=>{
     userinput=$("#myNumber").val(""); 
     $("#myNumber").focus();
     $(".win").removeClass("win").addClass("continue");
+    $(".enter").removeClass("getRid");
+    winStatus = false;
 }
 
 
@@ -101,7 +106,7 @@ $("#reset").click(()=>{
 });
 
 $("body").keydown((e)=>{
-    if(e.key=="Enter"){
+    if(e.key=="Enter" && !winStatus){
         score.text("Score:"+leftTurns);
         userinput=$("#myNumber").val();
         screenNumber.text(userinput); 
