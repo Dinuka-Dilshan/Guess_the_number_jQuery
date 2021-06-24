@@ -5,7 +5,6 @@ let winSound = new Audio("audio/won.wav");
 let loseSound = new Audio("audio/lose.wav");
 let wrongGuessSound = new Audio("audio/wrongGuess.wav");
 let randomNumber = Math.floor(Math.random()*20)+1;
-console.log(randomNumber);
 let userinput;
 let leftTurns = 10; 
 let highScore=0;
